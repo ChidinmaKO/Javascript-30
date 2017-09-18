@@ -33,22 +33,73 @@ body{
 	transform: translateY(-4px);
 }
 
+.mark{
+	width:2px;
+	height: 150px;
+	border-top: 10px solid #000;
+	padding: 4px 0 150px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(0deg);
+}
+.mark:nth-child(1){
+	transform: translate(-50%, -50%) rotate(30deg);
+}
+.mark:nth-child(2){
+	transform: translate(-50%, -50%) rotate(60deg);
+}
+.mark:nth-child(3){
+	transform: translate(-50%, -50%) rotate(90deg);
+}
+.mark:nth-child(4){
+	transform: translate(-50%, -50%) rotate(120deg);
+}
+.mark:nth-child(5){
+	transform: translate(-50%, -50%) rotate(150deg);
+}
+.mark:nth-child(6){
+	transform: translate(-50%, -50%) rotate(180deg);
+}
+.mark:nth-child(7){
+	transform: translate(-50%, -50%) rotate(210deg);
+}
+.mark:nth-child(8){
+	transform: translate(-50%, -50%) rotate(240deg);
+}
+.mark:nth-child(9){
+	transform: translate(-50%, -50%) rotate(270deg);
+}
+.mark:nth-child(10){
+	transform: translate(-50%, -50%) rotate(300deg);
+}
+.mark:nth-child(11){
+	transform: translate(-50%, -50%) rotate(330deg);
+}
+
+
 .hand{
-	width: 50%;
-	height: 5px;
+	width: 53%;
+	height: 6px;
 	background:#000;
 	position: absolute;
 	top:50%;
 	transform-origin: 100%;
 	transform:rotate(90deg);
-	transition: all 0.04s;
+	transition: all 0.05s;
 	transition-timing-function: cubic-bezier(0.1,2.7,0.58,1);
 }
 
-.sec-hand{
-	width: ;
+.min-hand{
+	width: 43%;
+	margin-left: 10%;
 }
 
-.fast{
+.hour-hand{
+	width: 38%;
+	margin-left: 15%;
+}
+
+.better{
 	transition: all 0s;
 }
