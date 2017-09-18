@@ -1,0 +1,54 @@
+html{
+	background: rgba(1, 141, 237,0.7) url("http://unsplash.it/1500/1000?image=881&blur=50");
+	background-size: cover;
+	font-size: 10px;
+	font-family:'helvetica neue';
+	text-align: center;
+}
+
+body{
+	font-size: 2rem;
+	margin: 0;
+	display: flex;
+	flex: 1;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.clock{
+	border-radius: 50%;
+	border:20px solid #fff;
+	width: 30rem;
+	height: 30rem;
+	position: relative;
+	margin: 100px auto;
+	padding: 4rem;
+	box-shadow: 0 0 0 4px rgba(0,0,0,0.1), inset 0 0 0 3px rgba(239, 239, 239,0.8), inset 0 0 0 7px rgb(0, 0, 0), 0 0 10px rgba(0,0,0,0.2);
+}
+
+.clock-face{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform: translateY(-4px);
+}
+
+.hand{
+	width: 50%;
+	height: 5px;
+	background:#000;
+	position: absolute;
+	top:50%;
+	transform-origin: 100%;
+	transform:rotate(90deg);
+	transition: all 0.04s;
+	transition-timing-function: cubic-bezier(0.1,2.7,0.58,1);
+}
+
+.sec-hand{
+	width: ;
+}
+
+.fast{
+	transition: all 0s;
+}
