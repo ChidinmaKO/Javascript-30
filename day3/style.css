@@ -1,0 +1,35 @@
+/*Define the variables at their root level */
+:root{
+	--padding:10px;
+	--blur:5px;
+	--base:#A8CD1B;
+}
+
+/*Image property values*/
+img{
+	padding: var(--padding);
+	background: var(--base);
+	filter: blur(var(--blur));
+}
+
+.highlight{
+	color: var(--base);
+}
+
+
+body{
+	font-size: 50px;
+	font-family: 'helvetica neue', sans-serif;
+	font-weight: 100;
+	text-align: center;
+	background: rgba(0, 90, 49, 0.9);
+	color: #fff;
+}
+
+.controls{
+	margin-bottom: 50px;
+}
+
+input{
+	width: 100px;
+}
