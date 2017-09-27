@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title> Console Tricks</title>
+		<meta charset="utf-8"/>
+		<meta name="author" content="Kalu Chidinma">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<p onclick="makePurple()">×BREAK×DOWN×</p>
+
+		<script type="text/javascript">
+			const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+			function makePurple() {
+				const p = document.querySelector('p');
+				p.style.color = '#5c2f77';
+				p.style.fontSize = '50px';
+			}
+
+			// Regular
+			console.log('hello world');
+
+			// Interpolated
+			console.log('hello, i am a %s string', '💩');
+
+			// Styled
+			console.log('%c I am a 10x Developer', 'font-size:20px, background: yellow, text-shadow:5px 6px 0 pink');
+
+			//warning
+			console.warn('please, stay away!');
+
+			//error
+			console.error('error found!');
+
+			//info
+			console.info('Africa is a continent. Not a country.' + ' ' + 'And, we are not as poor as the media wants you to believe');
+
+			//testing
+			const p = document.querySelector('p');
+			console.assert(p.classList.contains('okayyy'), 'that\'s wrong!');
+
+			//clearing
+			console.clear();
+
+			//viewing DOM elements
+			console.log(p);
+			console.dir(p);
+			console.clear();
+
+			// Grouping together
+			dogs.forEach(dog => {
+				console.groupCollapsed(`${dog.name}`);
+				console.log(`This is ${dog.name}`);
+				console.log(`${dog.name} is ${dog.age} years old`);
+				console.groupEnd(`${dog.name}`);
+			});
+
+			//counting
+			console.count('Chidinma');
+			console.count('Chidinma');
+			console.count('Kalu');
+			console.count('Chidinma');
+			console.count('Kalu');
+			console.count('Chidinma');
+			console.count('Kalu');
+			console.count('Chidinma');
+			console.count('Kalu');
+
+			//table
+			console.table(dogs);
+
+			//timing
+			console.time('fetching data');
+			fetch('https://api.github.com/users/chidinmako')
+				.then(data => data.json())
+				.then(data => {
+					console.timeEnd('fetching data');
+					console.log(data);
+				});
+
+		</script>
+	</body>
+</html>
