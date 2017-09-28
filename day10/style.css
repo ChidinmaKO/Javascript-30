@@ -16,7 +16,7 @@ html{
 }
 
 .item{
-	border-bottom: 1px solid rgb(241, 241, 241);
+	border-bottom: 1px solid rgb(243, 243, 243);
 	display: flex;
 	align-items: center;
 }
@@ -26,8 +26,7 @@ html{
 }
 
 input:checked + label{
-	background: linear-gradient(to right, #C779D0, #FEAC5E);
-	background: #F9F9F9;
+	background: #F8F8F8;
 	text-decoration: line-through;
 	/*border-radius: 5px;*/
 }
