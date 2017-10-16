@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title> JS Reference vs Copy</title>
+		<meta charset="utf-8"/>
+		<meta name="author" content="Kalu Chidinma">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//strings, arrays and booleans
+			let age = 100;
+			let age2 = age;
+			console.log(age, age2);
+			age = 200;
+			console.log(age, age2);
+
+			let fname = "chidinma";
+			let fname2 = name;
+			console.log(fname, fname2);
+			fname = "kalu";
+			console.log(fname, fname2);
+
+			const players = ['chidinma', 'victoria', 'kalu', 'tobiloba'];
+			const team = players;
+			console.log(players, team);
+			//team[2] = 'precious';
+			//console.log(players, team);
+			const team2 = players.slice();
+			team2[2] = 'precious';
+			console.log(team2);
+			console.log(players);
+
+			// or create a new array and concat the old one into it
+			const team3 = [].concat(players);
+			console.log(team2);
+			console.log(players);
+
+			// or use the ES6 spread
+			const team4 = [...players];
+			team4[4] = 'amarachi';
+			console.log(team4);
+			console.log(players);
+
+			const team5 = Array.from(players);
+			team5[2] = 'ada';
+			console.log(team5);
+			console.log(players);
+
+			console.clear();
+
+
+			//objects...
+			const person = {
+				name: 'Chidinma K.',
+				age: 23
+			};
+
+			const captain = person;
+			captain.number = 10;
+			console.log(captain);
+
+			const captain2 = Object.assign({}, person, {age: 20, number: 10});
+			console.log(captain2);
+
+
+			const chidinma = {
+				name: 'Chidinma',
+				age: '24',
+				social: {
+					twitter: '@ChidinmaKO',
+					github: '@ChidinmaKO'
+				}
+			};
+
+			console.log(chidinma);
+
+			const dev = Object.assign({}, chidinma);
+			console.log(dev.social);
+
+			const dev2 = JSON.parse(JSON.stringify(chidinma));
+			dev2.social.twitter = '@bestbabe';
+			console.log(dev2);
+		</script>
+	</body>
+</html>
