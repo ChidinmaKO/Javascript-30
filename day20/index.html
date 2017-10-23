@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title> JS Speech Recognition</title>
+		<meta charset="utf-8"/>
+		<meta name="author" content="Kalu Chidinma">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+		<div class="words" contenteditable="true"></div>
+		
+		<script type="text/javascript">
+			window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+			const recognition = new SpeechRecognition();
+			recognition.interimResults = true;
+			recognition.lang = 'en-US';
+
+			let p = document.createElement('p');
+			const words = document.querySelector('.words');
+			words.appendChild(p);
+
+			recognition.addEventListener('result', e => {
+				const transcript = Array.from(e.results)
+					.map(result => result[0])
+					.map(result => result.transcript)
+					.join('');
+
+					p.textContent = transcript;
+					if (e.results[0].isFinal) {
+						p = document.createElement('p');
+						words.appendChild(p);
+					}
+
+					if (transcript.includes('love')) {
+						console.log('😍 ❤️ ❤️');
+					}
+					console.log(transcript);
+			});
+
+			recognition.addEventListener('end', recognition.start);
+			recognition.start();
+		</script>
+	</body>
+
+</html>
