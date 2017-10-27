@@ -20,7 +20,7 @@ body{
 a{
 	text-decoration: none;
 	color: black;
-	background:rgba(0, 0, 0, 0.5);
+	/*background:rgba(0, 0, 0, 0.5);*/
 	border-radius: 5px;
 }
 
