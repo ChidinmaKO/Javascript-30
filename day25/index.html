@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title> Capture, Propagation, Bubbling and Once</title>
+		<meta charset="utf-8"/>
+		<meta name="author" content="Kalu Chidinma">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style type="text/css">
+			html{
+				box-sizing: border-box;
+			}
+
+			*, *:before, *:after{
+				box-sizing: inherit;
+			}
+
+			div{
+				width: 100%;
+				padding: 100px;
+			}
+
+			.one{
+				background: thistle;
+			}
+
+			.two{
+				background: mistyrose;
+			}
+
+			.three{
+				background: coral;
+			}
+		</style>
+	</head>
+
+	<body class="bod">
+		<div class="one">
+			<div class="two">
+				<div class="three">
+				</div>
+			</div>
+		</div>
+		<button>Button</button>
+		<script type="text/javascript">
+			const divs = document.querySelectorAll('div');
+			const button = document.querySelector('button');
+
+			function logText(e) {
+				e.stopPropagation(); //that is, stop bubbling.
+				console.log(this.classList.value);
+				//console.log(this);
+			}
+
+			//document.body.addEventListener('click', logText);
+
+			divs.forEach(div => div.addEventListener('click', logText, {
+				capture: false, //capture: false is default
+				once: true
+			}));
+
+			button.addEventListener('click', () => {
+				console.log('You Clicked Me!');
+			}, {
+				once: true
+			});
+		</script>
+	</body>
+</html>
