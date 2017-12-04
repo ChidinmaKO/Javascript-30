@@ -1,0 +1,71 @@
+html{
+	box-sizing: border-box;
+	font-size: 10px;
+	background: #D66D75;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #E29587, #D66D75);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #E29587, #D66D75); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	font-family: 'Amatic SC', cursive;
+}
+
+h1{
+	font-size: 10rem;
+	text-align: center;
+	line-height: 1;
+	margin-bottom: 0;
+}
+
+.score{
+	background: rgba(255, 255, 255, 0.2);
+	line-height: 1;
+	padding: 0 3rem;
+	border-radius: 1rem;
+}
+
+.game{
+	width: 600px;
+	height: 400px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.hole{
+	position: relative;
+	overflow: hidden;
+	flex: 1 0 33.33%;
+}
+
+.hole:after{
+	display: block;
+	background: url(dirt.svg) bottom center no-repeat;
+	background-size: contain;
+	content: '';
+	width: 100%;
+	height: 70px;
+	position: absolute;
+	bottom: -30px;
+	z-index: 2;
+}
+
+.mole{
+	background: url(mole.svg) bottom center no-repeat;
+	background-size: 60px;
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	height: 100%;
+	transition: all 0.4s;
+}
+
+.hole.up .mole{
+	top: 0;
+}
